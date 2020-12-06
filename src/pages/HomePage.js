@@ -20,15 +20,9 @@ function Home() {
                   width="100px"
                 />
                 <h1 className="header">
-                  <Link to="./BidPost" className="link1">
-                    Library{" "}
-                  </Link>{" "}
-                  <Link to="./PostPage" className="link2">
-                    Post{" "}
-                  </Link>
-                  <Link to="./BidPost" className="link3">
-                    Bid
-                  </Link>{" "}
+                  <Link to="./BidPost">Library </Link>{" "}
+                  <Link to="./PostPage">Post </Link>
+                  <Link to="./BidPost">Bid</Link>{" "}
                 </h1>
               </div>
               <div className="card-body">
