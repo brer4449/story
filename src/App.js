@@ -4,12 +4,14 @@ import HomePage from "./pages/HomePage";
 import Library from "./pages/LibraryPage";
 import Gift from "./pages/GiftPage";
 import Signup from "./pages/SignupPage";
+import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <Router>
       <div>
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <HomePage />
