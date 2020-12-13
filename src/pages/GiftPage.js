@@ -1,6 +1,6 @@
 import React from "react";
-// import Footer from "../components/Footer/index";
 import ClientForm from "../components/ClientForm/index";
+// import Footer from "../components/Footer/index";
 
 function Gift() {
   return (

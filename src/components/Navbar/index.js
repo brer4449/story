@@ -11,7 +11,7 @@ function Navbar() {
         width="100px"
         height="100px"
         className="d-inline-block align-top"
-        alt=""
+        alt="open book logo"
       />
       <button
         className="navbar-toggler"

@@ -1,15 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import Footer from "../components/Footer/index";
-// import Login from "../components/Login/index";
-import ClientForm from "../components/ClientForm/index";
 import Carousel from "react-bootstrap/Carousel";
+// import Footer from "../components/Footer/index";
 
 function Home() {
   return (
     <div>
-      {/* <Login></Login> */}
-      {/* <ClientForm></ClientForm> */}
       <br></br>
       <div className="container">
         <div className="row">
