@@ -1,6 +1,6 @@
 import React from "react";
 import ClientForm from "../components/ClientForm/index";
-// import Footer from "../components/Footer/index";
+import Footer from "../components/Footer/index";
 
 function Gift() {
   return (
@@ -18,6 +18,7 @@ function Gift() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

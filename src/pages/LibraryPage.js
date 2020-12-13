@@ -1,5 +1,5 @@
 import React from "react";
-// import Footer from "../components/Footer/index";
+import Footer from "../components/Footer/index";
 
 function Library() {
   return (
@@ -18,6 +18,7 @@ function Library() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

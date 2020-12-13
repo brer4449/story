@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-// import Footer from "../components/Footer/index";
+import Footer from "../components/Footer/index";
 
 function Home() {
   return (
@@ -65,7 +65,6 @@ function Home() {
                   is the place for you!
                 </h4>
               </div>
-              {/* <div className="card-footer"></div> */}
             </div>
           </div>
         </div>
@@ -73,7 +72,7 @@ function Home() {
       <br></br>
       <br></br> <br></br>
       <br></br>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
