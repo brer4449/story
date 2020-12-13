@@ -6,6 +6,11 @@
   font-size: larger;
 }
 
+/* something weird going on with this (Ask Joseph) */
+.navbar-toggler {
+  background-color: rgb(14, 99, 124) !important;
+}
+
 .navbar {
   border-bottom: 1px solid rgb(14, 99, 124);
 }
