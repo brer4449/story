@@ -1,5 +1,6 @@
 import React from "react";
 import ClientForm from "../components/ClientForm/index";
+import Proposal from "../components/Proposal/index";
 import Footer from "../components/Footer/index";
 
 function Gift() {
@@ -14,10 +15,14 @@ function Gift() {
               </div>
               <div className="card-body"></div>
               <ClientForm></ClientForm>
+              <Proposal></Proposal>
             </div>
           </div>
         </div>
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
       <Footer></Footer>
     </div>
   );

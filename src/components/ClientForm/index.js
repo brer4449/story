@@ -99,7 +99,7 @@ class ClientForm extends React.Component {
             onChange={this.handleInputChange}
           ></Form.Control>
         </div>
-        <button className="btn btn-primary" type="submit">
+        <button className="btn btn-primary mb-10" type="submit">
           Submit
         </button>
       </Form>
