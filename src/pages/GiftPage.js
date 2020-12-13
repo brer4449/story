@@ -10,7 +10,7 @@ function Gift() {
           <div className="col-12">
             <div className="card text-center">
               <div className="card-header">
-                <h1>Get a Gift That Will Never Get Old!</h1>
+                <h1>Get a Gift That Never Gets Old!</h1>
               </div>
               <div className="card-body"></div>
               <ClientForm></ClientForm>

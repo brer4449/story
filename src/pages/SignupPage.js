@@ -10,18 +10,7 @@ function Library() {
           <div className="col-12">
             <div className="card text-center">
               <div className="card-header">
-                <img
-                  className="logo"
-                  src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
-                  alt="storytold logo"
-                  height="100px"
-                  width="100px"
-                />
-                <h1 className="header">
-                  <Link to="./Library">Library </Link>{" "}
-                  <Link to="./Gift">Gift </Link>
-                  <Link to="./Signup">Signup</Link>{" "}
-                </h1>
+                <h1>Signup to be a Part of Our Every Growing Community</h1>
               </div>
               <div className="card-body">
                 <h1>This is the Signup page</h1>

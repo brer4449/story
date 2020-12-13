@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-white">
       <img
-        src="/images/openbook.png"
+        src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
         width="100px"
         height="100px"
         className="d-inline-block align-top"
