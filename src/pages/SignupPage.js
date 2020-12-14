@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "../components/Login/index";
 import Footer from "../components/Footer/index";
 
 function Library() {
@@ -12,7 +13,7 @@ function Library() {
                 <h1>Signup to be a Part of Our Every Growing Community</h1>
               </div>
               <div className="card-body">
-                <h1>This is the Signup page</h1>
+                <Login></Login>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ function Login() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div>
+      <div className="spacing">
         <Form.Label htmlFor="email">Email</Form.Label>
         <Form.Control
           type="email"
@@ -22,7 +22,7 @@ function Login() {
           placeholder="Enter Email"
         ></Form.Control>
       </div>
-      <div>
+      <div className="spacing">
         <Form.Label htmlFor="password">Password</Form.Label>
         <Form.Control
           type="text"
@@ -31,7 +31,7 @@ function Login() {
           placeholder="Enter Password"
         ></Form.Control>
       </div>
-      <button className="btn btn-primary" type="submit">
+      <button className="btn btn-primary mb-10" type="submit">
         Log In
       </button>
     </Form>
