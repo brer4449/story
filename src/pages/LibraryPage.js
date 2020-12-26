@@ -25,7 +25,7 @@ function Library() {
                   width="400px"
                   height="300px"
                   alt="under construction"
-                  /> */}
+                /> */}
                 <Wrapper>
                   <Story></Story>
                   <Story></Story>
