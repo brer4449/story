@@ -13,6 +13,12 @@ function Home() {
               <div className="card-header">
                 <h1>Stories Told</h1>
               </div>
+              <div className="background-img">
+                <h3>
+                  Connecting Professional Story Tellers to those with a Story to
+                  Tell
+                </h3>
+              </div>
               <div className="card-body">
                 <div className="carousel">
                   {/* setting indicators to false removes default bottom dashes at the bottom of the gallery indicators={false}*/}
