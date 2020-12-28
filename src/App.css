@@ -1,17 +1,4 @@
-/* body {
-  background-color: black;
-} */
-
-/* 
-.container {
-  margin-right: 0;
-  margin-left: 0;
-  padding-right: 0;
-  padding-left: 0;
-} */
-
 .background-img {
-  /* background-color: black; */
   height: 500px;
   background-image: url(https://images.pexels.com/photos/594452/pexels-photo-594452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=540);
 }
