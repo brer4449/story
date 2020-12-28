@@ -15,7 +15,7 @@ function GoogleLogoutComp() {
     <div>
       <GoogleLogout
         clientId={clientId}
-        buttonText="Login"
+        buttonText="Logout"
         onSuccess={onSuccess}
       />
     </div>
