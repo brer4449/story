@@ -1,5 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import GoogleLoginComp from "../GoogleLogin/index";
+import GoogleLogoutComp from "../GoogleLogout/index";
 import "./style.css";
 
 function Login() {
@@ -34,6 +36,8 @@ function Login() {
       <button className="btn btn-primary mb-10" type="submit">
         Log In
       </button>
+      <GoogleLoginComp></GoogleLoginComp>
+      <GoogleLogoutComp></GoogleLogoutComp>
     </Form>
   );
 }
