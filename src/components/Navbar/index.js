@@ -5,7 +5,7 @@ import "./style.css";
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-white">
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
       <img
         src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
         width="100px"
@@ -35,10 +35,10 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Home <span> |</span>
+              Home
             </Link>
           </li>
-          <li className="nav-item categories">
+          <li className="nav-item">
             <Link
               to="/Library"
               className={
@@ -47,7 +47,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Library <span> |</span>
+              Library
             </Link>
           </li>
           <li className="nav-item">
@@ -59,7 +59,7 @@ function Navbar() {
                   : "nav-link"
               }
             >
-              Gift <span> |</span>
+              Gift
             </Link>
           </li>
           <li className="nav-item">
