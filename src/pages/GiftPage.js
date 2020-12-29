@@ -6,7 +6,6 @@ import Footer from "../components/Footer/index";
 function Gift() {
   return (
     <div>
-      <br></br>
       <div className="container">
         <div className="row">
           <div className="col-12">

@@ -9,7 +9,6 @@ const headerStyle = {
 function Library() {
   return (
     <div>
-      <br></br>
       <div className="container">
         <div className="row">
           <div className="col-12">

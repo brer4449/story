@@ -5,7 +5,6 @@ import Footer from "../components/Footer/index";
 function Home() {
   return (
     <div>
-      <br></br>
       <div className="container">
         <div className="row">
           <div className="col-12">
