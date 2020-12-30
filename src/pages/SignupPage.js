@@ -2,7 +2,7 @@ import React from "react";
 import Login from "../components/Login/index";
 import Footer from "../components/Footer/index";
 
-function Library() {
+function Signup() {
   return (
     <div>
       <div className="container">
@@ -27,4 +27,4 @@ function Library() {
   );
 }
 
-export default Library;
+export default Signup;
