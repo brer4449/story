@@ -1,79 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import "./styles.css";
+import db from "../../firebase";
 
-class Proposal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      communication: "",
-      whatsneeded: "",
-      pricerange: "",
-    };
+const Proposal = () => {
+  const [communication, setCommunication] = useState("");
+  const [whatsNeeded, setWhatsNeeded] = useState("");
+  const [priceRange, setPriceRange] = useState("");
+  // const [loader, setLoader] = useState(false);
 
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange = (e) => {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // handle submit here
-    console.log("this proposal form worked!");
-    console.log(this.state);
+    // setLoader(true);
+    db.collection("proposal")
+      .add({
+        communication: communication,
+        whatsNeeded: whatsNeeded,
+        priceRange: priceRange,
+      })
+      .then(() => {
+        alert("Your proposal has been submitted!");
+        // setLoader(false);
+      })
+      .catch((err) => {
+        alert(err.message);
+        // setLoader(false);
+      });
+    setCommunication("");
+    setWhatsNeeded("");
+    setPriceRange("");
   };
 
-  render() {
-    return (
-      <Form onSubmit={this.handleSubmit}>
-        <div className="mb-10">
-          <Form.Label htmlFor="communication">
-            Preferred Method of Communication:
-          </Form.Label>
-          <Form.Control
-            type="text"
-            id="communication"
-            name="communication"
-            placeholder="Preferred Method of Contact Here"
-            onChange={this.handleInputChange}
-          ></Form.Control>
-        </div>
-        <div className="mb-10">
-          <Form.Label htmlFor="whatsneeded">
-            This is What You Need from the Client to be Successful:
-          </Form.Label>
-          <Form.Control
-            type="text"
-            id="whatsneeded"
-            name="whatsneeded"
-            placeholder="How Can This Project Succeed?"
-            onChange={this.handleInputChange}
-          ></Form.Control>
-        </div>
-        <div className="mb-10">
-          <Form.Label htmlFor="pricerange">What's Your Rate:</Form.Label>
-          <Form.Control
-            type="text"
-            id="pricerange"
-            name="pricerange"
-            placeholder="How Much Do You Charge per Story?"
-            onChange={this.handleInputChange}
-          ></Form.Control>
-        </div>
-        <button className="btn btn-primary mb-10" type="submit">
-          Submit
-        </button>
-      </Form>
-    );
-  }
-}
+  return (
+    <Form onSubmit={handleSubmit}>
+      <div className="mb-10">
+        <Form.Label htmlFor="communication">
+          Preferred Method of Communication:
+        </Form.Label>
+        <Form.Control
+          type="text"
+          id="communication"
+          name="communication"
+          placeholder="Preferred Method of Contact Here"
+          value={communication}
+          onChange={(e) => setCommunication(e.target.value)}
+        ></Form.Control>
+      </div>
+      <div className="mb-10">
+        <Form.Label htmlFor="whatsNeeded">
+          This is What You Need from the Client to be Successful:
+        </Form.Label>
+        <Form.Control
+          type="text"
+          id="whatsNeeded"
+          name="whatsNeeded"
+          placeholder="How Can This Project Succeed?"
+          value={whatsNeeded}
+          onChange={(e) => setWhatsNeeded(e.target.value)}
+        ></Form.Control>
+      </div>
+      <div className="mb-10">
+        <Form.Label htmlFor="priceRange">What's Your Rate:</Form.Label>
+        <Form.Control
+          type="text"
+          id="priceRange"
+          name="priceRange"
+          placeholder="How Much Do You Charge per Story?"
+          value={priceRange}
+          onChange={(e) => setPriceRange(e.target.value)}
+        ></Form.Control>
+      </div>
+      <button
+        className={
+          "btn btn-primary mb-10 " +
+          (communication === "" || whatsNeeded === "" || priceRange === ""
+            ? "disabled"
+            : "")
+        }
+        type="submit"
+      >
+        Submit
+      </button>
+    </Form>
+  );
+};
 
 export default Proposal;
