@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Library from "./pages/LibraryPage";
 import Gift from "./pages/GiftPage";
-import Signup from "./pages/SignupPage";
+import Entry from "./pages/EntryPage";
+import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import db from "./firebase";
@@ -26,8 +27,11 @@ function App() {
           <Route exact path="/Gift">
             <Gift />
           </Route>
-          <Route exact path="/Signup">
-            <Signup />
+          <Route exact path="/Entry">
+            <Entry />
+          </Route>
+          <Route exact path="/Login">
+            <Login />
           </Route>
         </Switch>
       </div>

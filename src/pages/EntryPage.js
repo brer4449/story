@@ -1,8 +1,9 @@
 import React from "react";
 import Login from "../components/Login/index";
+import Signup from "../components/Signup/index";
 import Footer from "../components/Footer/index";
 
-function Signup() {
+function Entry() {
   return (
     <div>
       <div className="container">
@@ -13,7 +14,11 @@ function Signup() {
                 <h1>Signup to be a Part of Our Every Growing Community</h1>
               </div>
               <div className="card-body">
-                <Login></Login>
+                <Signup></Signup>
+                <em className="small">Already have an account?</em>{" "}
+                <a className="small" href="/Login">
+                  Login Here
+                </a>
               </div>
             </div>
           </div>
@@ -27,4 +32,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Entry;
