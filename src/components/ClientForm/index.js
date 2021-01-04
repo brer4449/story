@@ -5,21 +5,13 @@ import axios from "axios";
 import db from "../../firebase";
 
 const ClientForm = () => {
-  // const [timeFrame, setTimeFrame] = useState("");
-  // const [recipient, setRecipient] = useState("");
-  // const [priceRange, setPriceRange] = useState("");
-  // const [genre, setGenre] = useState("");
-  // const [size, setSize] = useState("");
-  // const [aspirations, setAspirations] = useState("");
-  // const [loader, setLoader] = useState(false);
-
   const [inputs, setInputs] = useState({
     timeFrame: "",
     recipient: "",
     priceRange: "",
     genre: "",
     size: "",
-    aspirations: "",
+    specifics: "",
   });
   // Server state handling
   const [serverState, setServerState] = useState({
@@ -36,7 +28,7 @@ const ClientForm = () => {
     priceRange: (val) => !!val,
     genre: (val) => !!val,
     size: (val) => !!val,
-    aspirations: (val) => !!val,
+    specifics: (val) => !!val,
   };
 
   // Validate function that updates state and returns true if all rules pass
@@ -79,7 +71,7 @@ const ClientForm = () => {
         priceRange: "",
         genre: "",
         size: "",
-        aspirations: "",
+        specifics: "",
       });
     }
   };
@@ -103,7 +95,7 @@ const ClientForm = () => {
         priceRange: inputs.priceRange,
         genre: inputs.genre,
         size: inputs.size,
-        aspirations: inputs.aspirations,
+        specifics: inputs.specifics,
       })
       .then(() => {
         alert("Your application has been submitted!");
@@ -127,12 +119,12 @@ const ClientForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <div className="mb-10">
-        <Form.Label htmlFor="timeFrame">Time Frame:</Form.Label>
+        <Form.Label htmlFor="timeFrame">Estimated Time Frame:</Form.Label>
         <Form.Control
           type="text"
           id="timeFrame"
           name="timeFrame"
-          placeholder="Estimated Timeframe"
+          placeholder="How long will this project take?"
           value={inputs.timeFrame}
           onChange={handleOnChange}
         ></Form.Control>
@@ -187,16 +179,16 @@ const ClientForm = () => {
         {renderFieldError("size")}
       </div>
       <div className="mb-10">
-        <Form.Label htmlFor="aspirations">Aspirations for Project:</Form.Label>
+        <Form.Label htmlFor="specifics">Specifics About Project:</Form.Label>
         <Form.Control
           type="text"
-          id="aspirations"
-          name="aspirations"
-          placeholder="What are your hopes/goals for the project?"
-          value={inputs.aspirations}
+          id="specifics"
+          name="specifics"
+          placeholder="What are some things we should know about the project?"
+          value={inputs.specifics}
           onChange={handleOnChange}
         ></Form.Control>
-        {renderFieldError("aspirations")}
+        {renderFieldError("specifics")}
       </div>
       <button className={"btn btn-primary mb-10 "} type="submit">
         Submit

@@ -7,9 +7,9 @@ import db from "../../firebase";
 const Proposal = () => {
   // https://formspree.io/blog/react-forms-2/
   const [inputs, setInputs] = useState({
-    communication: "",
-    whatsNeeded: "",
-    priceRange: "",
+    email: "",
+    requirement: "",
+    rate: "",
   });
   // Server state handling
   const [serverState, setServerState] = useState({
@@ -21,9 +21,9 @@ const Proposal = () => {
 
   // Validation rules for each input field
   const validationRules = {
-    communication: (val) => val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
-    whatsNeeded: (val) => !!val,
-    priceRange: (val) => !!val,
+    email: (val) => val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+    requirement: (val) => !!val,
+    rate: (val) => !!val,
   };
 
   // Validate function that updates state, and returns true if all rules pass
@@ -61,9 +61,9 @@ const Proposal = () => {
     if (ok) {
       setFieldErrors({});
       setInputs({
-        communication: "",
-        whatsNeeded: "",
-        priceRange: "",
+        email: "",
+        requirement: "",
+        rate: "",
       });
     }
   };
@@ -82,9 +82,9 @@ const Proposal = () => {
     }
     db.collection("proposal")
       .add({
-        communication: inputs.communication,
-        whatsNeeded: inputs.whatsNeeded,
-        priceRange: inputs.priceRange,
+        email: inputs.email,
+        requirement: inputs.requirement,
+        rate: inputs.rate,
       })
       .then(() => {
         alert("Your proposal has been submitted!");
@@ -109,47 +109,45 @@ const Proposal = () => {
   return (
     <Form onSubmit={handleSubmit} noValidate>
       <div className="mb-10">
-        <Form.Label htmlFor="communication">
-          Preferred Method of Communication:
-        </Form.Label>
+        <Form.Label htmlFor="email">Email Address:</Form.Label>
         <Form.Control
           required
           type="text"
-          id="communication"
-          name="communication"
-          placeholder="Preferred Method of Contact Here"
-          value={inputs.communication}
+          id="email"
+          name="email"
+          placeholder="What's your email address?"
+          value={inputs.email}
           onChange={handleOnChange}
         ></Form.Control>
-        {renderFieldError("communication")}
+        {renderFieldError("email")}
       </div>
       <div className="mb-10">
-        <Form.Label htmlFor="whatsNeeded">
+        <Form.Label htmlFor="requirement">
           This is What You Need from the Client to be Successful:
         </Form.Label>
         <Form.Control
           required
           type="text"
-          id="whatsNeeded"
-          name="whatsNeeded"
-          placeholder="How Can This Project Succeed?"
-          value={inputs.whatsNeeded}
+          id="requirement"
+          name="requirement"
+          placeholder="What do you require from the client for this project to be successful?"
+          value={inputs.requirement}
           onChange={handleOnChange}
         ></Form.Control>
-        {renderFieldError("whatsNeeded")}
+        {renderFieldError("requirement")}
       </div>
       <div className="mb-10">
-        <Form.Label htmlFor="priceRange">What's Your Rate:</Form.Label>
+        <Form.Label htmlFor="rate">What's Your Rate:</Form.Label>
         <Form.Control
           required
           type="text"
-          id="priceRange"
-          name="priceRange"
+          id="rate"
+          name="rate"
           placeholder="How Much Do You Charge per Story?"
-          value={inputs.priceRange}
+          value={inputs.rate}
           onChange={handleOnChange}
         ></Form.Control>
-        {renderFieldError("priceRange")}
+        {renderFieldError("rate")}
       </div>
       <button
         className={"btn btn-primary mb-10 "}
@@ -158,11 +156,17 @@ const Proposal = () => {
       >
         Submit
       </button>
+      {/* DO WITH JOSEPH! */}
       {serverState.status && (
-        <p className={!serverState.status.ok ? "errorMsg" : ""}>
+        <p className={!serverState.status.ok ? "errorMsg" : "successMsg"}>
           {serverState.status.msg}
         </p>
       )}
+      {/* setTimeout(() => {
+          <p className={!serverState.status.ok ? "errorMsg" : "successMsg"}>
+            {serverState.status.msg}
+          </p>;
+        }, 3000)} */}
     </Form>
   );
 };
