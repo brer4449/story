@@ -1,3 +1,11 @@
 .mb-10 {
   margin-bottom: 10px;
 }
+
+.successMsg {
+  color: rgb(107, 204, 107);
+}
+
+.errorMsg {
+  color: rgb(231, 100, 100);
+}

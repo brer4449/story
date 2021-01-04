@@ -1,43 +1,128 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import "./style.css";
+import axios from "axios";
 import db from "../../firebase";
 
 const ClientForm = () => {
-  const [timeFrame, setTimeFrame] = useState("");
-  const [recipient, setRecipient] = useState("");
-  const [priceRange, setPriceRange] = useState("");
-  const [genre, setGenre] = useState("");
-  const [size, setSize] = useState("");
-  const [aspirations, setAspirations] = useState("");
+  // const [timeFrame, setTimeFrame] = useState("");
+  // const [recipient, setRecipient] = useState("");
+  // const [priceRange, setPriceRange] = useState("");
+  // const [genre, setGenre] = useState("");
+  // const [size, setSize] = useState("");
+  // const [aspirations, setAspirations] = useState("");
   // const [loader, setLoader] = useState(false);
+
+  const [inputs, setInputs] = useState({
+    timeFrame: "",
+    recipient: "",
+    priceRange: "",
+    genre: "",
+    size: "",
+    aspirations: "",
+  });
+  // Server state handling
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null,
+  });
+  //State to track field errors
+  const [fieldErrors, setFieldErrors] = useState({});
+
+  //Validation rules for each input field
+  const validationRules = {
+    timeFrame: (val) => !!val,
+    recipient: (val) => !!val,
+    priceRange: (val) => !!val,
+    genre: (val) => !!val,
+    size: (val) => !!val,
+    aspirations: (val) => !!val,
+  };
+
+  // Validate function that updates state and returns true if all rules pass
+  const validate = () => {
+    let errors = {};
+    let hasErrors = false;
+    for (let key of Object.keys(inputs)) {
+      errors[key] = !validationRules[key](inputs[key]);
+      hasErrors |= errors[key];
+    }
+    setFieldErrors((prev) => ({ ...prev, ...errors }));
+    return !hasErrors;
+  };
+
+  // Render method to display field errors
+  const renderFieldError = (field) => {
+    if (fieldErrors[field]) {
+      return <p className="errorMsg">Please enter a valid {field}.</p>;
+    }
+  };
+
+  const handleOnChange = (e) => {
+    e.persist();
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+  };
+
+  const handleServerResponse = (ok, msg) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg },
+    });
+    if (ok) {
+      setFieldErrors({});
+      setInputs({
+        timeFrame: "",
+        recipient: "",
+        priceRange: "",
+        genre: "",
+        size: "",
+        aspirations: "",
+      });
+    }
+  };
+
+  useEffect(() => {
+    // Only perform interactive validation after submit
+    if (Object.keys(fieldErrors).length > 0) {
+      validate();
+    }
+  }, [inputs]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setLoader(true);
+    if (!validate()) {
+      return;
+    }
     db.collection("application")
       .add({
-        timeFrame: timeFrame,
-        recipient: recipient,
-        priceRange: priceRange,
-        genre: genre,
-        size: size,
-        aspirations: aspirations,
+        timeFrame: inputs.timeFrame,
+        recipient: inputs.recipient,
+        priceRange: inputs.priceRange,
+        genre: inputs.genre,
+        size: inputs.size,
+        aspirations: inputs.aspirations,
       })
       .then(() => {
         alert("Your application has been submitted!");
-        // setLoader(false);
       })
       .catch((err) => {
         alert(err.message);
-        // setLoader(false);
       });
-    setTimeFrame("");
-    setRecipient("");
-    setPriceRange("");
-    setGenre("");
-    setSize("");
-    setAspirations("");
+    setServerState({ submitting: true });
+    axios({
+      method: "POST",
+      url: `https://formspree.io/f/xyyjvbzz`,
+      data: inputs,
+    })
+      .then((r) => {
+        handleServerResponse(true, "Thanks for submitting your application!");
+      })
+      .catch((r) => {
+        handleServerResponse(false, r.response.data.error);
+      });
   };
   return (
     <Form onSubmit={handleSubmit}>
@@ -48,9 +133,10 @@ const ClientForm = () => {
           id="timeFrame"
           name="timeFrame"
           placeholder="Estimated Timeframe"
-          value={timeFrame}
-          onChange={(e) => setTimeFrame(e.target.value)}
+          value={inputs.timeFrame}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("timeFrame")}
       </div>
       <div className="mb-10">
         <Form.Label htmlFor="recipient">Recipient:</Form.Label>
@@ -59,9 +145,10 @@ const ClientForm = () => {
           id="recipient"
           name="recipient"
           placeholder="Who is the gift for?"
-          value={recipient}
-          onChange={(e) => setRecipient(e.target.value)}
+          value={inputs.recipient}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("recipient")}
       </div>
       <div className="mb-10">
         <Form.Label htmlFor="priceRange">Price Range:</Form.Label>
@@ -70,9 +157,10 @@ const ClientForm = () => {
           id="priceRange"
           name="priceRange"
           placeholder="What's your price range?"
-          value={priceRange}
-          onChange={(e) => setPriceRange(e.target.value)}
+          value={inputs.priceRange}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("priceRange")}
       </div>
       <div className="mb-10">
         <Form.Label htmlFor="genre">Genre:</Form.Label>
@@ -81,9 +169,10 @@ const ClientForm = () => {
           id="genre"
           name="genre"
           placeholder="What type of story is it?"
-          value={genre}
-          onChange={(e) => setGenre(e.target.value)}
+          value={inputs.genre}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("genre")}
       </div>
       <div className="mb-10">
         <Form.Label htmlFor="size">Size of Project:</Form.Label>
@@ -92,9 +181,10 @@ const ClientForm = () => {
           id="size"
           name="size"
           placeholder="How large will the project be?"
-          value={size}
-          onChange={(e) => setSize(e.target.value)}
+          value={inputs.size}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("size")}
       </div>
       <div className="mb-10">
         <Form.Label htmlFor="aspirations">Aspirations for Project:</Form.Label>
@@ -103,26 +193,19 @@ const ClientForm = () => {
           id="aspirations"
           name="aspirations"
           placeholder="What are your hopes/goals for the project?"
-          value={aspirations}
-          onChange={(e) => setAspirations(e.target.value)}
+          value={inputs.aspirations}
+          onChange={handleOnChange}
         ></Form.Control>
+        {renderFieldError("aspirations")}
       </div>
-      <button
-        className={
-          "btn btn-primary mb-10 " +
-          (timeFrame === "" ||
-          recipient === "" ||
-          priceRange === "" ||
-          genre === "" ||
-          size === "" ||
-          aspirations === ""
-            ? "disabled"
-            : "")
-        }
-        type="submit"
-      >
+      <button className={"btn btn-primary mb-10 "} type="submit">
         Submit
       </button>
+      {serverState.status && (
+        <p className={!serverState.status.ok ? "errorMsg" : "successMsg"}>
+          {serverState.status.msg}
+        </p>
+      )}
     </Form>
   );
 };
