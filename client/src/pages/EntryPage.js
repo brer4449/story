@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../components/Login/index";
+import { Link } from "react-router-dom";
 import Signup from "../components/Signup/index";
 import Footer from "../components/Footer/index";
 
@@ -16,9 +16,7 @@ function Entry() {
               <div className="card-body">
                 <Signup></Signup>
                 <em className="small">Already have an account?</em>{" "}
-                <a className="small" href="/Login">
-                  Login Here
-                </a>
+                <Link to="/Login">Login Here</Link>
               </div>
             </div>
           </div>
