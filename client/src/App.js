@@ -7,15 +7,11 @@ import Entry from "./pages/EntryPage";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import db from "./firebase";
 
 function App() {
   return (
     <Router>
       <div>
-        {db.collection("email").onSnapshot((snapshot) => {
-          snapshot.docs.map((doc) => console.log(doc.data()));
-        })}
         <Navbar />
         <Switch>
           <Route exact path="/">

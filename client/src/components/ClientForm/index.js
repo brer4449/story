@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
-import db from "../../firebase";
+// import db from "../../firebase";
 
 const ClientForm = () => {
   const [inputs, setInputs] = useState({
@@ -88,21 +88,21 @@ const ClientForm = () => {
     if (!validate()) {
       return;
     }
-    db.collection("application")
-      .add({
-        timeFrame: inputs.timeFrame,
-        recipient: inputs.recipient,
-        priceRange: inputs.priceRange,
-        genre: inputs.genre,
-        size: inputs.size,
-        specifics: inputs.specifics,
-      })
-      .then(() => {
-        alert("Your application has been submitted!");
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    // db.collection("application")
+    //   .add({
+    //     timeFrame: inputs.timeFrame,
+    //     recipient: inputs.recipient,
+    //     priceRange: inputs.priceRange,
+    //     genre: inputs.genre,
+    //     size: inputs.size,
+    //     specifics: inputs.specifics,
+    //   })
+    //   .then(() => {
+    //     alert("Your application has been submitted!");
+    //   })
+    //   .catch((err) => {
+    //     alert(err.message);
+    //   });
     setServerState({ submitting: true });
     axios({
       method: "POST",
