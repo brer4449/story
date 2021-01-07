@@ -38,11 +38,24 @@ function SignUp() {
   // Render method to display field errors
   const renderFieldError = (field) => {
     if (fieldErrors[field]) {
-      return <p className="errorMsg">Please enter a valid {field}</p>;
+      return <p className="errorMsg">Please enter a valid unique {field}</p>;
     }
   };
 
   const handleOnChange = (e) => {
+    if (e.target.name === "email") {
+      db.collection("userLogin")
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((snap) => {
+            if (e.target.value === snap.data().email) {
+              renderFieldError("email");
+            }
+            // console.log(snap.data().email);
+            // console.log(e.target.name);
+          });
+        });
+    }
     e.persist();
     setInputs((prev) => ({
       ...prev,
@@ -73,7 +86,6 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("this worked in signup component");
     if (!validate()) {
       return;
     }

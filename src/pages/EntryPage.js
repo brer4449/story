@@ -1,32 +1,25 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Signup from "../components/Signup/index";
 import Footer from "../components/Footer/index";
 
 function Entry() {
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <div className="card text-center">
-              <div className="card-header">
-                <h1>Signup to be a Part of Our Every Growing Community</h1>
-              </div>
-              <div className="card-body">
-                <Signup></Signup>
-                <em className="small">Already have an account?</em>{" "}
-                <Link to="/Login">Login Here</Link>
-              </div>
-            </div>
-          </div>
+    <>
+      <Container
+        className="d-flex align-items-center justify-content-center"
+        style={{ minHeight: "100vh" }}
+      >
+        <div className="w-100" style={{ maxWidth: "400px" }}>
+          <Signup></Signup>
         </div>
-      </div>
+      </Container>
       <br></br>
       <br></br>
       <br></br>
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 

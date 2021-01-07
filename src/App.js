@@ -5,13 +5,14 @@ import Library from "./pages/LibraryPage";
 import Gift from "./pages/GiftPage";
 import Entry from "./pages/EntryPage";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <Router>
-      <div>
+      <AuthProvider>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -26,11 +27,10 @@ function App() {
           <Route exact path="/Entry">
             <Entry />
           </Route>
-          <Route exact path="/Login">
-            <Login />
-          </Route>
+          <Route path="/Login" component={Login} />
+          <Route path="/Signup" component={Signup} />
         </Switch>
-      </div>
+      </AuthProvider>
     </Router>
   );
 }
