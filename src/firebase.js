@@ -3,14 +3,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyD-m0Uf9iT2p5NGu904sItqqeWJeMd9aCs",
-  authDomain: "stories-told.firebaseapp.com",
-  projectId: "stories-told",
-  storageBucket: "stories-told.appspot.com",
-  messagingSenderId: "718015417396",
-  appId: "1:718015417396:web:24650481f5f36b78fdce61",
-  measurementId: "G-NZ41ZLWQ5Q",
-
   // https://medium.com/better-programming/a-simple-and-easy-contact-form-step-by-step-tutorial-react-js-1532bc025980
   // https://www.youtube.com/watch?v=RKj3OjgftXc
   // apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

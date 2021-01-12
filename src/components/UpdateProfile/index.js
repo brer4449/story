@@ -1,36 +1,55 @@
-import React, { useState, useRef } from "react";
-import { Container, Form, Alert, Card, Button } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-// import GoogleLoginComp from "../GoogleLogin/index";
-// import GoogleLogoutComp from "../GoogleLogout/index";
-import "./style.css";
 
-function SignUp() {
+export default function UpdateProfile() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
+  const { currentUser, updateEmail, updatePassword } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
 
-  async function handleSubmit(e) {
+  /**************** USE THIS SOMEWHERE? *************/
+  // https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component
+  // const isMountedComponent = useRef(true);
+  // useEffect(() => {
+  //   if (isMountedComponent.current) {
+  //   }
+  //   return () => {
+  //     isMountedComponent.current = false;
+  //   };
+  // });
+  // Don't think it's in this component, I think it's in the Private route component or forgot password
+  function handleSubmit(e) {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match!");
     }
-    try {
-      setError("");
-      setLoading(true);
-      // this does the signup for us
-      await signup(emailRef.current.value, passwordRef.current.value);
-      // this bring us to the Entry page
-      history.push("/Entry");
-    } catch {
-      setError("Failed to create an account");
+
+    const promises = [];
+    setLoading(true);
+    setError("");
+
+    // if our email changes calling the update email with our current email and adding it to array of promises
+    if (emailRef.current.value !== currentUser.email) {
+      promises.push(updateEmail(emailRef.current.value));
     }
-    setLoading(false);
+    if (passwordRef.current.value) {
+      promises.push(updatePassword(passwordRef.current.value));
+    }
+    Promise.all(promises)
+      .then(() => {
+        history.push("/");
+      })
+      .catch(() => {
+        setError("Failed to update profile.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
 
   return (
@@ -42,49 +61,45 @@ function SignUp() {
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
-              <h2 className="text-center mb-4">Signup</h2>
+              <h2 className="text-center mb-4">Update Profile</h2>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Enter Email SIGN UP"
                     required
                     ref={emailRef}
+                    defaultValue={currentUser.email}
                   ></Form.Control>
                 </Form.Group>
                 <Form.Group id="password">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter Password SIGN UP"
-                    required
                     ref={passwordRef}
+                    placeholder="Leave blank to keep the same."
                   ></Form.Control>
                 </Form.Group>
                 <Form.Group id="password-confirm">
                   <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter Password SIGN UP"
-                    required
                     ref={passwordConfirmRef}
+                    placeholder="Leave blank to keep the same."
                   ></Form.Control>
                 </Form.Group>
                 <Button type="submit" className="w-100" disabled={loading}>
-                  Signup
+                  Update
                 </Button>
               </Form>
             </Card.Body>
           </Card>
           <div className="w-100 text-center mt-2">
-            Already Have an Account? <Link to="/Login">Log In</Link>
+            <Link to="/Dashboard">Cancel</Link>
           </div>
         </div>
       </Container>
     </>
   );
 }
-
-export default SignUp;
