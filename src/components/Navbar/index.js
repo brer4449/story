@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
+  const { currentUser } = useAuth();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
       <img
@@ -63,16 +65,29 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/Entry"
-              className={
-                window.location.pathname === "/Entry"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Login/Sign Up
-            </Link>
+            {currentUser ? (
+              <Link
+                to="/Dashboard"
+                className={
+                  window.location.pathname === "/Dashboard "
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Profile
+              </Link>
+            ) : (
+              <Link
+                to="/Entry"
+                className={
+                  window.location.pathname === "/Entry"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Sign Up
+              </Link>
+            )}
           </li>
         </ul>
       </div>
