@@ -1,7 +1,5 @@
 import React, { useState, useRef } from "react";
 import { Container, Form, Alert, Button, Card } from "react-bootstrap";
-// import GoogleLoginComp from "../GoogleLogin/index";
-// import GoogleLogoutComp from "../GoogleLogout/index";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
@@ -43,7 +41,7 @@ export default function Login() {
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Enter Email LOGIN"
+                    placeholder="Enter Email"
                     required
                     ref={emailRef}
                   ></Form.Control>
@@ -52,7 +50,7 @@ export default function Login() {
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter Password LOGIN"
+                    placeholder="Enter Password"
                     required
                     ref={passwordRef}
                   ></Form.Control>
@@ -63,8 +61,6 @@ export default function Login() {
                 <div className="w-100 text-center mt-3">
                   <Link to="/Forgot-Password">Forgot Password?</Link>
                 </div>
-                {/* <GoogleLoginComp></GoogleLoginComp>
-      <GoogleLogoutComp></GoogleLogoutComp> */}
               </Form>
             </Card.Body>
           </Card>

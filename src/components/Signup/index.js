@@ -2,8 +2,6 @@ import React, { useState, useRef } from "react";
 import { Container, Form, Alert, Card, Button } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-// import GoogleLoginComp from "../GoogleLogin/index";
-// import GoogleLogoutComp from "../GoogleLogout/index";
 import "./style.css";
 
 function SignUp() {
@@ -49,7 +47,7 @@ function SignUp() {
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
-                    placeholder="Enter Email SIGN UP"
+                    placeholder="Enter Email"
                     required
                     ref={emailRef}
                   ></Form.Control>
@@ -58,7 +56,7 @@ function SignUp() {
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter Password SIGN UP"
+                    placeholder="Enter Password"
                     required
                     ref={passwordRef}
                   ></Form.Control>
@@ -67,7 +65,7 @@ function SignUp() {
                   <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control
                     type="password"
-                    placeholder="Enter Password SIGN UP"
+                    placeholder="Enter Password"
                     required
                     ref={passwordConfirmRef}
                   ></Form.Control>
