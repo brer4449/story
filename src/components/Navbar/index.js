@@ -74,6 +74,12 @@ function Navbar() {
                     : "nav-link"
                 }
               >
+                <img
+                  className="rounded-circle"
+                  src={`${process.env.PUBLIC_URL}/images/construction.jpg`}
+                  width={"25px"}
+                  height={"25px"}
+                />{" "}
                 Profile
               </Link>
             ) : (

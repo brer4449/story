@@ -29,7 +29,7 @@ export default function Dashboard() {
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
-              <h2 className="text-center mb-4">Profile</h2>
+              <h2 className="text-center mb-4">Welcome {currentUser.email}</h2>
               {error && <Alert variant="danger">{error}</Alert>}
               <strong>Email: </strong>
               {currentUser.email}
