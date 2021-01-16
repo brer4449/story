@@ -77,6 +77,7 @@ function Navbar() {
                 <img
                   className="rounded-circle"
                   src={`${process.env.PUBLIC_URL}/images/construction.jpg`}
+                  alt={"profile pic"}
                   width={"25px"}
                   height={"25px"}
                 />{" "}

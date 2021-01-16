@@ -7,7 +7,7 @@ export default function UpdateProfile() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { currentUser, updateEmail, updatePassword } = useAuth();
+  const { currentUser, updatePassword } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -64,15 +64,16 @@ export default function UpdateProfile() {
               <h2 className="text-center mb-4">Update Profile</h2>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
-                {/* <Form.Group id="email">
+                <Form.Group id="email">
                   <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="email"
                     required
                     ref={emailRef}
                     defaultValue={currentUser.email}
+                    disabled
                   ></Form.Control>
-                </Form.Group> */}
+                </Form.Group>
                 <Form.Group id="password">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
