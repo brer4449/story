@@ -1,0 +1,30 @@
+.nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  position: right;
+  /* font-weight: bold; */
+  font-size: larger;
+}
+
+/* something weird going on with this (Ask Joseph) */
+.navbar-toggler {
+  background-color: rgb(14, 99, 124) !important;
+}
+
+.navbar-custom {
+  /* Darkest to lightest */
+  /* BLUES */
+  /* background-color: #03254c; */
+  /* background-color: #1167b1; */
+  /* background-color: #187bcd; */
+  /* background-color: #2a9df4; */
+  /* background-color: #d0efff; */
+  /* PURPLES */
+  /* background-color: #3c1361; */
+  background-color: #4b2a53;
+  /* background-color: #52307c; */
+  /* background-color: #6e4468; */
+  /* background-color: #663a82; */
+  /* background-color: #7c5295; */
+  /* background-color: #b491c8; */
+  /* background-color: #bca0dc; */
+}
