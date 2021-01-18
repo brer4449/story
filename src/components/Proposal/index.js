@@ -108,7 +108,7 @@ const Proposal = () => {
 
   return (
     <Form onSubmit={handleSubmit} noValidate>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="email">Email Address:</Form.Label>
         <Form.Control
           required
@@ -121,22 +121,26 @@ const Proposal = () => {
         ></Form.Control>
         {renderFieldError("email")}
       </div>
-      <div className="mb-10">
-        <Form.Label htmlFor="requirement">
-          This is What You Need from the Client to be Successful:
-        </Form.Label>
-        <Form.Control
-          required
-          type="text"
-          id="requirement"
-          name="requirement"
-          placeholder="What do you require from the client for this project to be successful?"
-          value={inputs.requirement}
-          onChange={handleOnChange}
-        ></Form.Control>
+      <div className="mb-10 w-50">
+        <div>
+          <Form.Label htmlFor="requirement">
+            This is What You Need from the Client to be Successful:
+          </Form.Label>
+        </div>
+        <div>
+          <Form.Control
+            required
+            type="text"
+            id="requirement"
+            name="requirement"
+            placeholder="What do you require from the client for this project to be successful?"
+            value={inputs.requirement}
+            onChange={handleOnChange}
+          ></Form.Control>
+        </div>
         {renderFieldError("requirement")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="rate">What's Your Rate:</Form.Label>
         <Form.Control
           required
@@ -150,7 +154,7 @@ const Proposal = () => {
         {renderFieldError("rate")}
       </div>
       <button
-        className={"btn btn-primary mb-10 "}
+        className={"btn btn-primary mb-10"}
         disabled={serverState.submitting}
         type="submit"
       >
