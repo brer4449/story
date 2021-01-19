@@ -118,7 +118,7 @@ const ClientForm = () => {
   };
   return (
     <Form onSubmit={handleSubmit}>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="timeFrame">Estimated Time Frame:</Form.Label>
         <Form.Control
           type="text"
@@ -130,7 +130,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("timeFrame")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="recipient">Recipient:</Form.Label>
         <Form.Control
           type="text"
@@ -142,7 +142,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("recipient")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="priceRange">Price Range:</Form.Label>
         <Form.Control
           type="text"
@@ -154,7 +154,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("priceRange")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="genre">Genre:</Form.Label>
         <Form.Control
           type="text"
@@ -166,7 +166,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("genre")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="size">Size of Project:</Form.Label>
         <Form.Control
           type="text"
@@ -178,7 +178,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("size")}
       </div>
-      <div className="mb-10">
+      <div className="mb-10 w-50">
         <Form.Label htmlFor="specifics">Specifics About Project:</Form.Label>
         <Form.Control
           type="text"
@@ -190,7 +190,7 @@ const ClientForm = () => {
         ></Form.Control>
         {renderFieldError("specifics")}
       </div>
-      <button className={"btn btn-primary mb-10 "} type="submit">
+      <button className={"btn btn-primary mb-10"} type="submit">
         Submit
       </button>
       {serverState.status && (
