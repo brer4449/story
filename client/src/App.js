@@ -12,6 +12,9 @@ import PrivateRoute from "./components/PrivateRoute";
 import UpdateProfile from "./components/UpdateProfile";
 import ForgotPassword from "./components/ForgotPassword";
 // import { AuthProvider } from "./context/AuthContext";
+// https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
+// https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?authuser=6&project=stories-told-301900&supportedpurview=project
+// https://stackoverflow.com/questions/47545940/when-i-run-npm-install-it-returns-with-err-code-eintegrity-npm-5-3-0
 
 function App() {
   return (
