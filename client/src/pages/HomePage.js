@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Footer from "../components/Footer/index";
+import axios from "axios";
 
 function Home() {
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: "/api/users",
+    }).then((res) => {
+      console.log(res);
+    });
+  }, []);
+
   return (
     <div>
       <div className="container">

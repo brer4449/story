@@ -5,7 +5,7 @@ import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
       <img
@@ -64,7 +64,7 @@ function Navbar() {
               Gift
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             {currentUser ? (
               <Link
                 to="/Dashboard"
@@ -95,7 +95,8 @@ function Navbar() {
                 Sign Up
               </Link>
             )}
-          </li>
+            </li>
+          )} */}
         </ul>
       </div>
     </nav>
