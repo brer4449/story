@@ -10,6 +10,7 @@ function Home() {
       url: "/api/users",
     }).then((res) => {
       console.log(res);
+      console.log("test");
     });
   }, []);
 
