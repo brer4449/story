@@ -19,7 +19,7 @@ function Gift() {
                   <small>
                     by{" "}
                     <em>
-                      <a href={"#"}>Author</a>
+                      <a href={"/Author"}>Author</a>
                     </em>
                   </small>
                   <p>
