@@ -116,6 +116,17 @@ const ClientForm = () => {
         handleServerResponse(false, r.response.data.error);
       });
   };
+
+  axios({
+    method: "GET",
+    url: "/api/users",
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   return (
     <Form onSubmit={handleSubmit}>
       <div className="mb-10 w-50">
