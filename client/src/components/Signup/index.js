@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container, Form, Alert, Card, Button } from "react-bootstrap";
-import { useAuth } from "../../context/AuthContext";
+// import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 
@@ -8,7 +8,7 @@ function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { signup, login } = useAuth();
+  // const { signup, login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -22,8 +22,8 @@ function SignUp() {
       setError("");
       setLoading(true);
       // this does the signup for us
-      await signup(emailRef.current.value, passwordRef.current.value);
-      await login(emailRef.current.value, passwordRef.current.value);
+      // await signup(emailRef.current.value, passwordRef.current.value);
+      // await login(emailRef.current.value, passwordRef.current.value);
       // this bring us to the Entry page
       history.push("/Dashboard");
     } catch {

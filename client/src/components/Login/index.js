@@ -1,13 +1,13 @@
 import React, { useState, useRef } from "react";
 import { Container, Form, Alert, Button, Card } from "react-bootstrap";
-import { useAuth } from "../../context/AuthContext";
+// import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -17,7 +17,7 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      // await login(emailRef.current.value, passwordRef.current.value);
       history.push("/Dashboard");
     } catch {
       setError("Failed to sign in. Check your credentials and try again.");

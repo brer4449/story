@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
 import { Container, Card, Button, Form, Alert } from "react-bootstrap";
-import { useAuth } from "../../context/AuthContext";
+// import { useAuth } from "../../context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 
 export default function UpdateProfile() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const { currentUser, updatePassword } = useAuth();
+  // const { currentUser, updatePassword } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -70,7 +70,7 @@ export default function UpdateProfile() {
                     type="email"
                     required
                     ref={emailRef}
-                    defaultValue={currentUser.email}
+                    // defaultValue={currentUser.email}
                     disabled
                   ></Form.Control>
                 </Form.Group>

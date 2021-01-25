@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import "./styles.css";
 import axios from "axios";
-// import db from "../../firebase";
 
 const Proposal = () => {
   // https://formspree.io/blog/react-forms-2/

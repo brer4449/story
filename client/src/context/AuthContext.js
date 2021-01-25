@@ -1,6 +1,7 @@
 // import React, { useContext, useState, useEffect } from "react";
 // import { auth } from "../firebase";
 
+// *******************TODO: GET RID OF FIREBASE AND CONNECT TO MONGODB**********************
 // const AuthContext = React.createContext();
 // // hook that allows us access to our context
 // export function useAuth() {

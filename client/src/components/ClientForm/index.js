@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
-// import db from "../../firebase";
 
 const ClientForm = () => {
   const [inputs, setInputs] = useState({
