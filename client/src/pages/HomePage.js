@@ -1,17 +1,21 @@
 import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Footer from "../components/Footer/index";
-import axios from "axios";
+// import axios from "axios";
+import API from "../utils/API";
 
 function Home() {
   useEffect(() => {
-    axios({
-      method: "GET",
-      url: "/api/users",
-    }).then((res) => {
-      console.log(res);
-      console.log("test");
-    });
+    // axios({
+    //   method: "POST",
+    //   url: "/api/users",
+    //   data: "test",
+    // }).then((res) => {
+    //   console.log(res);
+    // });
+    API.getUsers()
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }, []);
 
   return (

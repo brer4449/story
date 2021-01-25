@@ -80,18 +80,6 @@ const Proposal = () => {
     if (!validate()) {
       return;
     }
-    // db.collection("proposal")
-    //   .add({
-    //     email: inputs.email,
-    //     requirement: inputs.requirement,
-    //     rate: inputs.rate,
-    //   })
-    //   .then(() => {
-    //     alert("Your proposal has been submitted!");
-    //   })
-    //   .catch((err) => {
-    //     alert(err.message);
-    //   });
     setServerState({ submitting: true });
     axios({
       method: "POST",

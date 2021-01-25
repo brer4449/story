@@ -88,21 +88,6 @@ const ClientForm = () => {
     if (!validate()) {
       return;
     }
-    // db.collection("application")
-    //   .add({
-    //     timeFrame: inputs.timeFrame,
-    //     recipient: inputs.recipient,
-    //     priceRange: inputs.priceRange,
-    //     genre: inputs.genre,
-    //     size: inputs.size,
-    //     specifics: inputs.specifics,
-    //   })
-    //   .then(() => {
-    //     alert("Your application has been submitted!");
-    //   })
-    //   .catch((err) => {
-    //     alert(err.message);
-    //   });
     setServerState({ submitting: true });
     axios({
       method: "POST",
@@ -116,17 +101,6 @@ const ClientForm = () => {
         handleServerResponse(false, r.response.data.error);
       });
   };
-
-  axios({
-    method: "GET",
-    url: "/api/users",
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   return (
     <Form onSubmit={handleSubmit}>
       <div className="mb-10 w-50">
