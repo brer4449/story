@@ -5,4 +5,7 @@ export default {
   getUsers: function () {
     return axios.get("/api/users");
   },
+  getFormData: function () {
+    return axios.get("/api/client");
+  },
 };

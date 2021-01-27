@@ -13,7 +13,7 @@ function Home() {
     // }).then((res) => {
     //   console.log(res);
     // });
-    API.getUsers()
+    API.getFormData()
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }, []);

@@ -38,7 +38,7 @@ export default function UpdateProfile() {
     //   promises.push(updateEmail(emailRef.current.value));
     // }
     if (passwordRef.current.value) {
-      promises.push(updatePassword(passwordRef.current.value));
+      // promises.push(updatePassword(passwordRef.current.value));
     }
     Promise.all(promises)
       .then(() => {
