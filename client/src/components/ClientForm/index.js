@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
+import API from "../../utils/API";
 
 const ClientForm = () => {
   const [inputs, setInputs] = useState({
@@ -88,17 +89,32 @@ const ClientForm = () => {
       return;
     }
     setServerState({ submitting: true });
-    axios({
-      method: "POST",
-      url: `https://formspree.io/f/xyyjvbzz`,
-      data: inputs,
-    })
-      .then((r) => {
-        handleServerResponse(true, "Thanks for submitting your application!");
+    // ***************COMMENTED THIS OUT SO IT DOESN'T SEND AN EMAIL EACH TIME WE SUBMIT A FORM******************
+    // axios({
+    //   method: "POST",
+    //   url: `https://formspree.io/f/xyyjvbzz`,
+    //   data: inputs,
+    // })
+    //   .then((r) => {
+    //     console.log(r)
+    //   })
+    //   .catch((r) => {
+    //     console.error(err)
+    //   });
+    if (inputs) {
+      API.saveFormData({
+        timeframe: inputs.timeFrame,
+        recipient: inputs.recipient,
+        pricerange: inputs.priceRange,
+        genre: inputs.genre,
+        size: inputs.size,
+        details: inputs.specifics,
       })
-      .catch((r) => {
-        handleServerResponse(false, r.response.data.error);
-      });
+        .then((res) =>
+          handleServerResponse(true, "Thanks for submitting your application!")
+        )
+        .catch((err) => handleServerResponse(false, err.response.data.error));
+    }
   };
   return (
     <Form onSubmit={handleSubmit}>

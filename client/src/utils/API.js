@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const API = {
   // Get all users
   getUsers: function () {
     return axios.get("/api/users");
@@ -8,4 +8,9 @@ export default {
   getFormData: function () {
     return axios.get("/api/client");
   },
+  saveFormData: function (clientFormData) {
+    return axios.post("/api/client", clientFormData);
+  },
 };
+
+export default API;
