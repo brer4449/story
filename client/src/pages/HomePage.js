@@ -14,7 +14,13 @@ function Home() {
     //   console.log(res);
     // });
     API.getFormData()
-      .then((res) => console.log(res))
+      .then((res) => console.log(res, "form data"))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    API.getUsers()
+      .then((res) => console.log(res, "user data"))
       .catch((err) => console.log(err));
   }, []);
 
