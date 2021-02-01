@@ -5,11 +5,14 @@ const API = {
   getUsers: function () {
     return axios.get("/api/users");
   },
-  getFormData: function () {
+  getClientFormData: function () {
     return axios.get("/api/client");
   },
-  saveFormData: function (clientFormData) {
+  saveClientFormData: function (clientFormData) {
     return axios.post("/api/client", clientFormData);
+  },
+  getEmployeeFormData: function () {
+    return axios.get("/api/employee");
   },
 };
 

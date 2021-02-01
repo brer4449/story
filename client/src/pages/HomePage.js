@@ -13,14 +13,29 @@ function Home() {
     // }).then((res) => {
     //   console.log(res);
     // });
-    API.getFormData()
-      .then((res) => console.log(res, "form data"))
+    API.getClientFormData()
+      .then((res) => console.log(res, "client form data"))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
+    let variable = "user.seed.js";
+    let filename = variable.split(".seed.js")[0];
+    function toTitleCase(str) {
+      return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
+    console.log(toTitleCase(filename));
     API.getUsers()
       .then((res) => console.log(res, "user data"))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    API.getEmployeeFormData()
+      .then((res) => console.log(res, "employee form data"))
       .catch((err) => console.log(err));
   }, []);
 

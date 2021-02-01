@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    // console.log(req.query, "from the controller");
+    // console.log(req.query, "from the user controller");
     // res.json({ test: "test" });
     db.User.find(req.query)
       .then((dbModel) => res.json(dbModel))

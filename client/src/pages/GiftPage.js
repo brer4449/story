@@ -105,7 +105,7 @@ function Gift() {
     //     console.error(err)
     //   });
     if (inputs) {
-      API.saveFormData({
+      API.saveClientFormData({
         timeframe: inputs.timeFrame,
         recipient: inputs.recipient,
         pricerange: inputs.priceRange,
