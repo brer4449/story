@@ -10,14 +10,12 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import UpdateProfile from "./components/UpdateProfile";
 import ForgotPassword from "./components/ForgotPassword";
-// import { AuthProvider } from "./context/AuthContext";
 // https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
 // https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?authuser=6&project=stories-told-301900&supportedpurview=project
 
 function App() {
   return (
     <Router>
-      {/* <AuthProvider> */}
       <Navbar />
       <Switch>
         <Route exact path="/Dashboard">
