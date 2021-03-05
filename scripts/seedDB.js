@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const db = require("../models");
 
 // empties our User and Client Form collections and inserts the data below
@@ -7,16 +8,20 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/storiestold");
 
 const userSeed = [
   {
-    email: "test1",
-    password: "password",
+    name: "Admin User",
+    email: "admin@example.com",
+    password: bcrypt.hashSync("123456", 10),
+    isAdmin: true,
   },
   {
-    email: "test2",
-    password: "password",
+    name: "John Doe",
+    email: "john@example.com",
+    password: bcrypt.hashSync("123456", 10),
   },
   {
-    email: "test3",
-    password: "Password",
+    name: "Jane Doe",
+    email: "jane@example.com",
+    password: bcrypt.hashSync("123456", 10),
   },
 ];
 
