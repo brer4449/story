@@ -1,15 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import Library from "./pages/LibraryPage";
+// import Library from "./pages/LibraryPage";
 import Gift from "./pages/GiftPage";
 import Entry from "./pages/EntryPage";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
-import Dashboard from "./components/Dashboard";
-import UpdateProfile from "./components/UpdateProfile";
-import ForgotPassword from "./components/ForgotPassword";
 import ShoppingCart from "./components/ShoppingCart";
 // https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
 // https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?authuser=6&project=stories-told-301900&supportedpurview=project
