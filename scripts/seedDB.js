@@ -5,36 +5,34 @@ const db = require("../models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/storiestold");
 
-// const userSeed = [
-//   {
-//     username: "test1",
-//     password: "password",
-//   },
-//   {
-//     username: "test2",
-//     password: "password",
-//   },
-//   {
-//     username: "test3",
-//     password: "Password",
-//   },
-// ];
+const userSeed = [
+  {
+    email: "test1",
+    password: "password",
+  },
+  {
+    email: "test2",
+    password: "password",
+  },
+  {
+    email: "test3",
+    password: "Password",
+  },
+];
 
-// db.User.remove({})
-//   .then(() => db.User.collection.insertMany(userSeed))
-//   .then((data) => {
-//     console.log(data.result.n + " records inserted!");
-//     process.exit(0);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     process.exit(1);
-//   });
+db.User.remove({})
+  .then(() => db.User.collection.insertMany(userSeed))
+  .then((data) => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 
 // const clientFormSeed = [
 //   {
-//     username: "test1",
-//     password: "password",
 //     timeframe: "hella days",
 //     recipient: "Nana",
 //     pricerange: "expensive af",
@@ -43,8 +41,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/storiestold");
 //     details: "this story better be amazing, yo.",
 //   },
 //   {
-//     username: "test2",
-//     password: "password",
 //     timeframe: "test2",
 //     recipient: "test2",
 //     pricerange: "test2",
@@ -53,8 +49,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/storiestold");
 //     details: "test2",
 //   },
 //   {
-//     username: "test3",
-//     password: "Password",
 //     timeframe: "test3",
 //     recipient: "test3",
 //     pricerange: "test3",
