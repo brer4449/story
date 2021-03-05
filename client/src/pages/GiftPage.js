@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import axios from "axios";
 import API from "../utils/API";
-import Proposal from "../components/Proposal/index";
 import Footer from "../components/Footer/index";
 
 function Gift() {
@@ -305,7 +304,6 @@ function Gift() {
                       </p>
                     )}
                   </Form>
-                  <Proposal></Proposal>
                 </div>
               </div>
             </div>
