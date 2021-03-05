@@ -213,9 +213,204 @@ function Gift() {
                   Application and be Matched with One of Our Many Story Tellers
                 </h2>
                 <br></br>
+                <br></br>
+                <br></br>
                 <div>
                   <Form onSubmit={handleSubmit}>
-                    <div className="mb-10">
+                    <div className="mb-10 py-3 py-3">
+                      <h4>Who is this for?</h4>
+                      <div>
+                        <label htmlFor="myself">Myself</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="myself"
+                          name="myself"
+                          value="myself"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="family">Family member</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="family"
+                          name="family"
+                          value="family"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="friend">Friend</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="friend"
+                          name="friend"
+                          value="friend"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="other">Other</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="other"
+                          name="other"
+                          value="other"
+                        ></input>
+                      </div>
+                    </div>
+                    <div className="mb-10 py-3">
+                      <h4>What type of gift?</h4>
+                      <div>
+                        <label htmlFor="animation">Video with Animation</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="animation"
+                          name="animation"
+                          value="animation"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="video">Video of storyteller</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="video"
+                          name="video"
+                          value="video"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="audio">Audio Recording</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="audio"
+                          name="audio"
+                          value="audio"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="song">Song</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="song"
+                          name="song"
+                          value="song"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="written">Written Story</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="written"
+                          name="written"
+                          value="written"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="unsure">Not Sure</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="unsure"
+                          name="unsure"
+                          value="unsure"
+                        ></input>
+                      </div>
+                    </div>
+                    <div className="mb-10 py-3">
+                      <h4>Who is telling the story?</h4>
+                      <div>
+                        <label htmlFor="me">Me</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="me"
+                          name="me"
+                          value="me"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="giftee">The Giftee</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="giftee"
+                          name="giftee"
+                          value="giftee"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="someone">Someone Else</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="someone"
+                          name="someone"
+                          value="someone"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="notSure">Not Sure</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="notSure"
+                          name="notSure"
+                          value="notSure"
+                        ></input>
+                      </div>
+                    </div>
+                    <div className="mb-10 py-3">
+                      <h4>How soon do you need the gift completed?</h4>
+                      <div>
+                        <label htmlFor="oneMo">Less than a month</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="oneMo"
+                          name="oneMo"
+                          value="oneMo"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="twoMo">1-2 months</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="twoMo"
+                          name="twoMo"
+                          value="twoMo"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="threeMo">Over 2 months</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="threeMo"
+                          name="threeMo"
+                          value="threeMo"
+                        ></input>
+                      </div>
+                      <div>
+                        <label htmlFor="notSure">Not Sure</label>
+                        <input
+                          style={{ margin: "8px" }}
+                          type="checkbox"
+                          id="notSure"
+                          name="notSure"
+                          value="notSure"
+                        ></input>
+                      </div>
+                    </div>
+
+                    {/* <div className="mb-10 py-3">
                       <Form.Label htmlFor="timeFrame">
                         Estimate Time Frame:
                       </Form.Label>
@@ -229,19 +424,7 @@ function Gift() {
                       ></Form.Control>
                       {renderFieldError("timeframe")}
                     </div>
-                    <div className="mb-10">
-                      <Form.Label htmlFor="recipient">Recipient:</Form.Label>
-                      <Form.Control
-                        type="text"
-                        id="recipient"
-                        name="recipient"
-                        placeholder="Who is this gift for?"
-                        value={inputs.recipient}
-                        onChange={handleOnChange}
-                      ></Form.Control>
-                      {renderFieldError("recipient")}
-                    </div>
-                    <div className="mb-10">
+                    <div className="mb-10 py-3">
                       <Form.Label htmlFor="priceRange">Price Range:</Form.Label>
                       <Form.Control
                         type="text"
@@ -253,7 +436,7 @@ function Gift() {
                       ></Form.Control>
                       {renderFieldError("pricerange")}
                     </div>
-                    <div className="mb-10">
+                    <div className="mb-10 py-3">
                       <Form.Label htmlFor="genre">Genre:</Form.Label>
                       <Form.Control
                         type="text"
@@ -265,7 +448,7 @@ function Gift() {
                       ></Form.Control>
                       {renderFieldError("genre")}
                     </div>
-                    <div className="mb-10">
+                    <div className="mb-10 py-3">
                       <Form.Label htmlFor="size">Size of Project:</Form.Label>
                       <Form.Control
                         type="text"
@@ -277,7 +460,7 @@ function Gift() {
                       ></Form.Control>
                       {renderFieldError("size")}
                     </div>
-                    <div className="mb-10">
+                    <div className="mb-10 py-3">
                       <Form.Label htmlFor="specifics">
                         Specifics About Project:
                       </Form.Label>
@@ -290,7 +473,7 @@ function Gift() {
                         onChange={handleOnChange}
                       ></Form.Control>
                       {renderFieldError("specifics")}
-                    </div>
+                    </div> */}
                     <button className={"btn btn-primary mb-10"} type="submit">
                       Submit
                     </button>
