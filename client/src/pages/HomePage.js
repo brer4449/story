@@ -49,10 +49,7 @@ function Home() {
                 <h1>Stories Told</h1>
               </div>
               <div className="background-img">
-                <h3>
-                  Connecting Professional Story Tellers to those with a Story to
-                  Tell
-                </h3>
+                <h3>Bringing Your Stories to Life</h3>
               </div>
               <div className="card-body">
                 <div className="carousel">
@@ -102,8 +99,8 @@ function Home() {
                   </Carousel>
                 </div>
                 <h4 className="text">
-                  Have a story that you want told by a professional? Story Told
-                  is the place for you!
+                  Have a story that you want told by a professional? Stories
+                  Told is the place for you!
                 </h4>
               </div>
             </div>
