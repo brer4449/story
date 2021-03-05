@@ -20,6 +20,7 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
+// method to check if passwords match, enteredPassword is going to be plain text, need to use bcrypt since password stored in DB is hashed
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
