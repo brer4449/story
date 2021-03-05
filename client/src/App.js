@@ -14,27 +14,18 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
-        <Route exact path="/Dashboard">
-          <Dashboard />
-        </Route>
-        <Route exact path="/Update-Profile">
-          <UpdateProfile />
-        </Route>
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/Library">
+        {/* <Route exact path="/Library">
           <Library />
-        </Route>
+        </Route> */}
         <Route exact path="/Gift">
           <Gift />
         </Route>
         <Route exact path="/Entry">
           <Entry />
         </Route>
-        <Route path="/Login" component={Login} />
-        <Route path="/Signup" component={Signup} />
-        <Route path="/Forgot-Password" component={ForgotPassword} />
         <Route exact path="/ShoppingCart">
           <ShoppingCart />
         </Route>
