@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import UpdateProfile from "./components/UpdateProfile";
 import ForgotPassword from "./components/ForgotPassword";
+import ShoppingCart from "./components/ShoppingCart";
 // https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
 // https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?authuser=6&project=stories-told-301900&supportedpurview=project
 
@@ -39,6 +40,9 @@ function App() {
         <Route path="/Login" component={Login} />
         <Route path="/Signup" component={Signup} />
         <Route path="/Forgot-Password" component={ForgotPassword} />
+        <Route exact path="/ShoppingCart">
+          <ShoppingCart />
+        </Route>
       </Switch>
       {/* </AuthProvider> */}
     </Router>

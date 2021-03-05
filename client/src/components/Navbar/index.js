@@ -74,6 +74,18 @@ function Navbar() {
               Signup
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/ShoppingCart"
+              className={
+                window.location.pathname === "/ShoppingCart"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              <span className="fas fa-shopping-cart"></span>
+            </Link>
+          </li>
           {/* SAVE THIS! USE ONCE WE HAVE A USER, CAN SWITCH NAVBAR ELEMENT FROM 'PROFILE' TO 'SIGNUP' */}
           {/* <li className="nav-item">
             {currentUser ? (
