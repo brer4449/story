@@ -6,13 +6,18 @@ import "./style.css";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
-      <img
-        src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
-        width="100px"
-        height="100px"
-        className="d-inline-block align-top"
-        alt="open book logo"
-      />
+      <Link to={"/"}>
+        <img
+          src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
+          width="100px"
+          height="100px"
+          className="d-inline-block align-top"
+          alt="open book logo"
+        />
+      </Link>
+      <Link className="brandHeader" to={"/"}>
+        <h1>Stories Told</h1>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"

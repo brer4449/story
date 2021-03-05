@@ -1,3 +1,15 @@
+.brandHeader {
+  display: "inline";
+  margin: "10px";
+  color: "white";
+  margin: 15px;
+}
+
+.brandHeader:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .nav-link {
   font-family: Arial, Helvetica, sans-serif;
   position: right;
