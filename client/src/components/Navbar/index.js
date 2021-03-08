@@ -79,7 +79,8 @@ function Navbar() {
               Signup
             </Link>
           </li>
-          <li className="nav-item">
+          {/* THIS IS THE SHOPPING CART ICON*/}
+          {/* <li className="nav-item">
             <Link
               to="/ShoppingCart"
               className={
@@ -90,40 +91,7 @@ function Navbar() {
             >
               <span className="fas fa-shopping-cart"></span>
             </Link>
-          </li>
-          {/* SAVE THIS! USE ONCE WE HAVE A USER, CAN SWITCH NAVBAR ELEMENT FROM 'PROFILE' TO 'SIGNUP' */}
-          {/* <li className="nav-item">
-            {currentUser ? (
-              <Link
-                to="/Dashboard"
-                className={
-                  window.location.pathname === "/Dashboard "
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                <img
-                  className="rounded-circle"
-                  src={`${process.env.PUBLIC_URL}/images/construction.jpg`}
-                  alt={"profile pic"}
-                  width={"25px"}
-                  height={"25px"}
-                />{" "}
-                Profile
-              </Link>
-            ) : (
-              <Link
-                to="/Entry"
-                className={
-                  window.location.pathname === "/Entry"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Sign Up
-              </Link>
-            )}
-            </li> */}
+          </li> */}
         </ul>
       </div>
     </nav>

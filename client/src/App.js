@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import Gift from "./pages/GiftPage";
 import Entry from "./pages/EntryPage";
 import Navbar from "./components/Navbar";
-import ShoppingCart from "./components/ShoppingCart";
 // https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
 // https://console.cloud.google.com/apis/credentials/consent/edit;newAppInternalUser=false?authuser=6&project=stories-told-301900&supportedpurview=project
 
@@ -25,9 +24,6 @@ function App() {
         </Route>
         <Route exact path="/Entry">
           <Entry />
-        </Route>
-        <Route exact path="/ShoppingCart">
-          <ShoppingCart />
         </Route>
       </Switch>
       {/* </AuthProvider> */}
