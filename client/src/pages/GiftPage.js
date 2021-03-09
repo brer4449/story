@@ -137,9 +137,6 @@ function Gift() {
       });
     }
   };
-
-  // console.log(inputs.recipient.myself);
-
   useEffect(() => {
     // Only perform interactive validation after submit
     if (Object.keys(fieldErrors).length > 0) {
