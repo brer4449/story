@@ -46,6 +46,10 @@ function Gift() {
     let timeframeCount = 0;
     let hasErrors = false;
     let errors = {};
+
+    // clear out field errors
+    setFieldErrors({});
+
     // iterating over key: value pairs of inputs and checking to see if that key starts with said field, if it does, add to that field's count
     console.log(hasErrors);
     for (const [key, value] of Object.entries(inputs)) {
@@ -110,6 +114,7 @@ function Gift() {
 
   const handleOnChange = (e) => {
     e.persist();
+    // set id & name to be recipientmyself, etc. instead of DOM traversal
     let stateName = e.target.parentElement.getAttribute("class") + e.target.id;
     setInputs((prev) => ({
       ...prev,
@@ -156,10 +161,9 @@ function Gift() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // this might need to be like the two lines below it
-    validateAtLeastOneChecked();
-    // if (!validate()) {
-    //   return;
-    // }
+    if (!validateAtLeastOneChecked()) {
+      return;
+    }
     setServerState({ submitting: true });
     // ***************COMMENTED THIS OUT SO IT DOESN'T SEND AN EMAIL EACH TIME WE SUBMIT A FORM******************
     // axios({
