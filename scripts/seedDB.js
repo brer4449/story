@@ -4,7 +4,7 @@ const db = require("../models");
 
 // empties our User and Client Form collections and inserts the data below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/storiestold");
+mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/storiestold");
 
 const userSeed = [
   {
