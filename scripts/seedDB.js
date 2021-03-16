@@ -25,7 +25,7 @@ const userSeed = [
   },
 ];
 
-db.User.remove({})
+db.User.deleteMany({})
   .then(() => db.User.collection.insertMany(userSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
@@ -63,7 +63,7 @@ db.User.remove({})
 //   },
 // ];
 
-// db.ClientForm.remove({})
+// db.ClientForm.deleteMany({})
 //   .then(() => db.ClientForm.collection.insertMany(clientFormSeed))
 //   .then((data) => {
 //     console.log(data.result.n + " records inserted!");
@@ -92,7 +92,7 @@ const employeeFormSeed = [
   },
 ];
 
-db.EmployeeForm.remove({})
+db.EmployeeForm.deleteMany({})
   .then(() => db.EmployeeForm.collection.insertMany(employeeFormSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
