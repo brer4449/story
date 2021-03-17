@@ -8,3 +8,11 @@
   padding-right: 0px;
   overflow: hidden;
 }
+
+.card-background{
+  background-color: #7c5295;
+}
+
+.video-header {
+  color: white
+}
