@@ -8,7 +8,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
       <Link to={"/"}>
         <img
-          src="https://images.pexels.com/photos/159872/book-open-pages-literature-159872.jpeg"
+          src={`${process.env.PUBLIC_URL}/images/without_bg.png`}
           width="100px"
           height="100px"
           className="d-inline-block align-top"
