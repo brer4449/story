@@ -50,6 +50,11 @@ function Home() {
               <div className="background-img">
                 <h1>Stories Told</h1>
                 <h3>Bringing Your Stories to Life</h3>
+                <p style={{ paddingLeft: "30%", paddingRight: "30%" }}>
+                  We will help turn your stories into a work of art that will
+                  make for an absolutely tear-jerking gift or a treasured
+                  memento.
+                </p>
               </div>
               <div className="card-body card-background">
                 <h3 className="text-center video-header">
