@@ -44,9 +44,6 @@ function Home() {
         <div className="row">
           <div className="col-12">
             <div className="card text-center">
-              {/* <div className="card-header">
-              Stories Told h1 was in here, looks better in background imo
-              </div> */}
               <div className="background-img">
                 <h1>Stories Told</h1>
                 <h3>Bringing Your Stories to Life</h3>
@@ -55,6 +52,41 @@ function Home() {
                   make for an absolutely tear-jerking gift or a treasured
                   memento.
                 </p>
+              </div>
+              <div className="card-body px-5 mx-5">
+                <div className="row">
+                  <div className="col-3 text-center p-3">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/mediaicon.png`}
+                    ></img>
+                  </div>
+                  <div className="col-6 text-center p-3">Multi-media Story</div>
+                  <div className="col-3 text-center p-3">
+                    <img src=""></img>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-3 text-center p-3">
+                    <img src=""></img>
+                  </div>
+                  <div className="col-6 text-center p-3">Recorded Story</div>
+                  <div className="col-3 text-center p-3">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/writtenicon.png`}
+                    ></img>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-3 text-center p-3">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/songicon.png`}
+                    ></img>
+                  </div>
+                  <div className="col-6 text-center p-3">SONG</div>
+                  <div className="col-3 text-center p-3">
+                    <img src=""></img>
+                  </div>
+                </div>
               </div>
               <div className="card-body card-background">
                 <h3 className="text-center video-header">
@@ -66,30 +98,6 @@ function Home() {
                     type="video/mp4"
                   />
                 </video>
-              </div>
-              <div className="card-body">
-                <h1 className="pt-5">About Stories Told</h1>
-                <p className="p-5 mx-5">
-                  Stories Told is a brain child of Steven Kerr's, brought to
-                  fruition with the programming help of Brendan Erickson and all
-                  of the amazing creative talent of our storytellers that brings
-                  your stories to life. "Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                  sint occaecat cupidatat non proident, sunt in culpa qui
-                  officia deserunt mollit anim id est laborum.""Lorem ipsum
-                  dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi
-                  ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum."
-                </p>
               </div>
             </div>
           </div>
