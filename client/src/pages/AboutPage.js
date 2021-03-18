@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer/index";
 
-function Entry() {
+function About() {
   return (
     <>
       <div className="container-fluid">
@@ -89,4 +89,4 @@ function Entry() {
   );
 }
 
-export default Entry;
+export default About;

@@ -67,7 +67,7 @@ function Navbar() {
               Gift
             </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link
               to="/Entry"
               className={
@@ -77,6 +77,18 @@ function Navbar() {
               }
             >
               Signup
+            </Link>
+          </li> */}
+          <li className="nav-item">
+            <Link
+              to="/About"
+              className={
+                window.location.pathname === "/About"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              About
             </Link>
           </li>
           {/* THIS IS THE SHOPPING CART ICON*/}
