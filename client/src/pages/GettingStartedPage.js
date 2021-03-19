@@ -34,9 +34,6 @@ function GettingStarted() {
   // State to track field errors
   const [fieldErrors, setFieldErrors] = useState({});
 
-  // My own attempt at validation rules
-  // https://stackoverflow.com/questions/11787665/making-sure-at-least-one-checkbox-is-checked
-  // TODO: set the field error for that question block
   // when we submit form, want to check if each question has at least one TRUTHY value
   const validateAtLeastOneChecked = function () {
     let recipientCount = 0;
