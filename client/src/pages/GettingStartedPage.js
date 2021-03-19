@@ -120,6 +120,13 @@ function GettingStarted() {
     }));
   };
 
+  const userInputHandler = (e) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   const handleServerResponse = (ok, msg) => {
     setServerState({
       submitting: false,
@@ -231,7 +238,7 @@ function GettingStarted() {
                         id="userName"
                         name="userName"
                         value={inputs.userName}
-                        // onChange={userInputHandler}
+                        onChange={userInputHandler}
                       ></input>
                     </div>
                     <div className="mb-10 py-3 py-3">
@@ -242,7 +249,7 @@ function GettingStarted() {
                         id="userEmail"
                         name="userEmail"
                         value={inputs.userEmail}
-                        // onChange={userInputHandler}
+                        onChange={userInputHandler}
                       ></input>
                     </div>
                     <div className="mb-10 py-3 py-3">
