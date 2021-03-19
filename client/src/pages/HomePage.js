@@ -40,6 +40,7 @@ function Home() {
   function clickHandler() {
     document.querySelector(".thumbnail").style.display = "none";
     document.querySelector(".who-vid").style.display = "block";
+    document.querySelector(".who-vid").play();
   }
 
   return (
@@ -71,7 +72,7 @@ function Home() {
                       alt="Two paper cutout men happily hold record together, hoisted overhead"
                       height="200px"
                       width="300px"
-                      src={`${process.env.PUBLIC_URL}/images/thumbnail.png`}
+                      src={`${process.env.PUBLIC_URL}/images/playthumbnail.png`}
                       onClick={clickHandler}
                     />
                     <video
