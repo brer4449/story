@@ -56,16 +56,39 @@ function Home() {
                 <div className="row">
                   <div className="col-3 text-center p-3">
                     <img
-                      alt="Icon of tree with multi media as leaves"
+                      alt="Icon of tree with multi-media as leaves"
                       src={`${process.env.PUBLIC_URL}/images/mediaicon.png`}
                     ></img>
                   </div>
-                  <div className="col-6 text-center p-3">Multi-media Story</div>
+                  <div className="col-6 text-center p-3">
+                    <h3>Multi-media Story</h3>
+                    <img
+                      className="thumbnail"
+                      alt="Two paper cutout men happily hold record together, hoisted overhead"
+                      height="200px"
+                      width="300px"
+                      src={`${process.env.PUBLIC_URL}/images/thumbnail.png`}
+                    />
+                    <video className="who-vid" height="300px" controls>
+                      <source
+                        src={`${process.env.PUBLIC_URL}/images/the_who_compressed.mp4`}
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
                   <div className="col-3 text-center p-3"></div>
                 </div>
                 <div className="row">
                   <div className="col-3 text-center p-3"></div>
-                  <div className="col-6 text-center p-3">Recorded Story</div>
+                  <div className="col-6 text-center p-3">
+                    <h3>Recorded Story</h3>
+                    <audio controls className="my-5">
+                      <source
+                        src={`${process.env.PUBLIC_URL}/images/bryan_recording.mp3`}
+                        type="audio/mpeg"
+                      />
+                    </audio>
+                  </div>
                   <div className="col-3 text-center p-3">
                     <img
                       alt="Icon of tree with blank parchment on front"
@@ -80,11 +103,15 @@ function Home() {
                       src={`${process.env.PUBLIC_URL}/images/songicon.png`}
                     ></img>
                   </div>
-                  <div className="col-6 text-center p-3">SONG</div>
+                  <div className="col-6 text-center p-3">
+                    <h3 className="py-3">SONG</h3>
+                    <h3 className="py-3">COMING</h3>
+                    <h3 className="py-3">SOON</h3>
+                  </div>
                   <div className="col-3 text-center p-3"></div>
                 </div>
               </div>
-              <div className="card-body card-background">
+              {/* <div className="card-body card-background">
                 <h3 className="text-center video-header">
                   A Sample of What Your Story Could Look Like
                 </h3>
@@ -94,7 +121,7 @@ function Home() {
                     type="video/mp4"
                   />
                 </video>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
