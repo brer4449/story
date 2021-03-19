@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import axios from "axios";
-import API from "../utils/API";
+// import API from "../utils/API";
 import Footer from "../components/Footer/index";
 
 function Gift() {
-  const form = document.FC;
   // TODO: change names on input fields to match these values !!!!
   const [inputs, setInputs] = useState({
     recipientmyself: false,
@@ -178,32 +177,32 @@ function Gift() {
     //     console.error(err);
     //   });
     // TODO: update this so it handles checkbox input, not text input
-    if (inputs) {
-      API.saveClientFormData({
-        recipientmyself: inputs.recipientmyself,
-        recipientfamily: inputs.recipientfamily,
-        recipientfriend: inputs.recipientfriend,
-        recipientother: inputs.recipientother,
-        typeanimation: inputs.typeanimation,
-        typevideo: inputs.typevideo,
-        typeaudio: inputs.typeaudio,
-        typesong: inputs.typesong,
-        typewritten: inputs.typewritten,
-        typeunsure: inputs.typeunsure,
-        storytellerme: inputs.storytellerme,
-        storytellergiftee: inputs.storytellergiftee,
-        storytellersomeoneelse: inputs.storytellersomeoneelse,
-        storytellerundecided: inputs.storytellerundecided,
-        timeframeonemonth: inputs.timeframeonemonth,
-        timeframetwomonths: inputs.timeframetwomonths,
-        timeframethreemonths: inputs.timeframethreemonths,
-        timeframeundetermined: inputs.timeframeundetermined,
-      })
-        .then((res) =>
-          handleServerResponse(true, "Thanks for submitting your application!")
-        )
-        .catch((err) => handleServerResponse(false, err.response.data.error));
-    }
+    // if (inputs) {
+    //   API.saveClientFormData({
+    //     recipientmyself: inputs.recipientmyself,
+    //     recipientfamily: inputs.recipientfamily,
+    //     recipientfriend: inputs.recipientfriend,
+    //     recipientother: inputs.recipientother,
+    //     typeanimation: inputs.typeanimation,
+    //     typevideo: inputs.typevideo,
+    //     typeaudio: inputs.typeaudio,
+    //     typesong: inputs.typesong,
+    //     typewritten: inputs.typewritten,
+    //     typeunsure: inputs.typeunsure,
+    //     storytellerme: inputs.storytellerme,
+    //     storytellergiftee: inputs.storytellergiftee,
+    //     storytellersomeoneelse: inputs.storytellersomeoneelse,
+    //     storytellerundecided: inputs.storytellerundecided,
+    //     timeframeonemonth: inputs.timeframeonemonth,
+    //     timeframetwomonths: inputs.timeframetwomonths,
+    //     timeframethreemonths: inputs.timeframethreemonths,
+    //     timeframeundetermined: inputs.timeframeundetermined,
+    //   })
+    //     .then((res) =>
+    //       handleServerResponse(true, "Thanks for submitting your application!")
+    //     )
+    //     .catch((err) => handleServerResponse(false, err.response.data.error));
+    // }
   };
 
   return (
@@ -216,7 +215,6 @@ function Gift() {
                 <h1>Give a Gift That Never Gets Old!</h1>
               </div>
               <div className="card-body">
-                {/* SAMPLE STORY HERE */}
                 <br></br>
                 <h2>
                   To Have Your Story Told Like The One Above, Simply Fill Out an
