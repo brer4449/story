@@ -132,7 +132,7 @@ function About() {
               <p className="text-right">
                 Joseph has always been fascinated by storytelling. Joseph is
                 currently honing his craft in South Dakota. When not writing he
-                enjoys induging in film, is a tech nerd, and loves to read.
+                enjoys indulging in film, is a tech nerd, and loves to read.
               </p>
             </div>
             <div className="col-4">
