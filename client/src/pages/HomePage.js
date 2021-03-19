@@ -111,17 +111,6 @@ function Home() {
                   <div className="col-3 text-center p-3"></div>
                 </div>
               </div>
-              {/* <div className="card-body card-background">
-                <h3 className="text-center video-header">
-                  A Sample of What Your Story Could Look Like
-                </h3>
-                <video className="who-vid" height="500px" controls>
-                  <source
-                    src={`${process.env.PUBLIC_URL}/images/the_who_compressed.mp4`}
-                    type="video/mp4"
-                  />
-                </video>
-              </div> */}
             </div>
           </div>
         </div>
