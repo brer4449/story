@@ -57,21 +57,19 @@ function Home() {
                 <div className="row">
                   <div className="col-3 text-center p-3">
                     <img
+                      alt="Icon of tree with multi media as leaves"
                       src={`${process.env.PUBLIC_URL}/images/mediaicon.png`}
                     ></img>
                   </div>
                   <div className="col-6 text-center p-3">Multi-media Story</div>
-                  <div className="col-3 text-center p-3">
-                    <img src=""></img>
-                  </div>
+                  <div className="col-3 text-center p-3"></div>
                 </div>
                 <div className="row">
-                  <div className="col-3 text-center p-3">
-                    <img src=""></img>
-                  </div>
+                  <div className="col-3 text-center p-3"></div>
                   <div className="col-6 text-center p-3">Recorded Story</div>
                   <div className="col-3 text-center p-3">
                     <img
+                      alt="Icon of tree with blank parchment on front"
                       src={`${process.env.PUBLIC_URL}/images/writtenicon.png`}
                     ></img>
                   </div>
@@ -79,13 +77,12 @@ function Home() {
                 <div className="row">
                   <div className="col-3 text-center p-3">
                     <img
+                      alt="Icon of tree with music notes as leaves"
                       src={`${process.env.PUBLIC_URL}/images/songicon.png`}
                     ></img>
                   </div>
                   <div className="col-6 text-center p-3">SONG</div>
-                  <div className="col-3 text-center p-3">
-                    <img src=""></img>
-                  </div>
+                  <div className="col-3 text-center p-3"></div>
                 </div>
               </div>
               <div className="card-body card-background">
