@@ -91,7 +91,7 @@ function About() {
           <div className="row py-4">
             <div className="col-2"></div>
             <div className="col-4">
-              <h3>Sean - Animation</h3>
+              <h3>Sean Meagher - Animation</h3>
             </div>
             <div className="col-4">
               <img
