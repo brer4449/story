@@ -25,6 +25,8 @@ function GettingStarted() {
     timeframetwomonths: false,
     timeframethreemonths: false,
     timeframeundetermined: false,
+    userName: "",
+    userEmail: "",
   });
   // Server state handling
   const [serverState, setServerState] = useState({
@@ -144,6 +146,8 @@ function GettingStarted() {
         timeframetwomonths: false,
         timeframethreemonths: false,
         timeframeundetermined: false,
+        userName: "",
+        userEmail: "",
       });
     }
   };
@@ -222,6 +226,28 @@ function GettingStarted() {
                 <br></br>
                 <div>
                   <Form name="FC" onSubmit={handleSubmit}>
+                    <div className="mb-10 py-3 py-3">
+                      <label htmlFor="userName">Enter your name</label>
+                      <input
+                        style={{ margin: "8px" }}
+                        type="text"
+                        id="userName"
+                        name="userName"
+                        value={inputs.userName}
+                        // onChange={userInputHandler}
+                      ></input>
+                    </div>
+                    <div className="mb-10 py-3 py-3">
+                      <label htmlFor="userEmail">Enter your email</label>
+                      <input
+                        style={{ margin: "8px" }}
+                        type="text"
+                        id="userEmail"
+                        name="userEmail"
+                        value={inputs.userEmail}
+                        // onChange={userInputHandler}
+                      ></input>
+                    </div>
                     <div className="mb-10 py-3 py-3">
                       <h4>Who is this for?</h4>
                       <div className="recipient">
