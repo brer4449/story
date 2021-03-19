@@ -4,7 +4,7 @@ import axios from "axios";
 // import API from "../utils/API";
 import Footer from "../components/Footer/index";
 
-function Gift() {
+function GettingStarted() {
   // TODO: change names on input fields to match these values !!!!
   const [inputs, setInputs] = useState({
     recipientmyself: false,
@@ -466,4 +466,4 @@ function Gift() {
   );
 }
 
-export default Gift;
+export default GettingStarted;

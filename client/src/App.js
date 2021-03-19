@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 // import Library from "./pages/LibraryPage";
-import Gift from "./pages/GiftPage";
+import GettingStarted from "./pages/GettingStartedPage";
 import About from "./pages/AboutPage";
 import Navbar from "./components/Navbar";
 // https://console.developers.google.com/apis/credentials/domainverification?project=stories-told-300002
@@ -19,8 +19,8 @@ function App() {
         {/* <Route exact path="/Library">
           <Library />
         </Route> */}
-        <Route exact path="/Gift">
-          <Gift />
+        <Route exact path="/GettingStarted">
+          <GettingStarted />
         </Route>
         {/* <Route exact path="/Entry">
           <Entry />
