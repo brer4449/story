@@ -1,3 +1,33 @@
+.navbar {
+  background-image: url("./logobanner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 165px;
+}
+
+.navbar-nav {
+  z-index: 10;
+}
+
+#top-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #38a5f2;
+  height: 165px;
+  width: 18%;
+}
+
+#top-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #38a5f2;
+  height: 165px;
+  width: 18%;
+  z-index: 0;
+}
+
 .brandHeader {
   display: "inline";
   margin: "10px";

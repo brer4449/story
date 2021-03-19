@@ -6,7 +6,9 @@ import "./style.css";
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
-      <Link to={"/"}>
+      <div id="top-left"></div>
+      <div id="top-right"></div>
+      {/* <Link to={"/"}>
         <img
           src={`${process.env.PUBLIC_URL}/images/without_bg.png`}
           width="100px"
@@ -17,7 +19,7 @@ function Navbar() {
       </Link>
       <Link className="brandHeader" to={"/"}>
         <h1>Stories Told</h1>
-      </Link>
+      </Link> */}
       <button
         className="navbar-toggler"
         type="button"
