@@ -37,6 +37,10 @@ function Home() {
   //     .then((res) => console.log(res, "employee form data"))
   //     .catch((err) => console.log(err));
   // }, []);
+  function clickHandler() {
+    document.querySelector(".thumbnail").style.display = "none";
+    document.querySelector(".who-vid").style.display = "block";
+  }
 
   return (
     <div>
@@ -68,8 +72,14 @@ function Home() {
                       height="200px"
                       width="300px"
                       src={`${process.env.PUBLIC_URL}/images/thumbnail.png`}
+                      onClick={clickHandler}
                     />
-                    <video className="who-vid" height="300px" controls>
+                    <video
+                      className="who-vid my-3"
+                      height="300px"
+                      controls
+                      style={{ display: "none" }}
+                    >
                       <source
                         src={`${process.env.PUBLIC_URL}/images/the_who_compressed.mp4`}
                         type="video/mp4"
