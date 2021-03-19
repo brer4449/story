@@ -81,7 +81,7 @@ function Home() {
                       style={{ display: "none" }}
                     >
                       <source
-                        src={`${process.env.PUBLIC_URL}/images/the_who.mp4`}
+                        src={`${process.env.PUBLIC_URL}/images/the-who.mp4`}
                         type="video/mp4"
                       />
                     </video>
