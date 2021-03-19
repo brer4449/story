@@ -114,9 +114,10 @@ function Home() {
                     ></img>
                   </div>
                   <div className="col-6 text-center p-3">
-                    <h3 className="py-3">SONG</h3>
-                    <h3 className="py-3">COMING</h3>
-                    <h3 className="py-3">SOON</h3>
+                    <h3 className="py-3">Song</h3>
+                    <h3 className="py-5">
+                      <em>COMING SOON</em>
+                    </h3>
                   </div>
                   <div className="col-3 text-center p-3"></div>
                 </div>

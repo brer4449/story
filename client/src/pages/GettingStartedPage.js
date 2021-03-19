@@ -212,14 +212,11 @@ function GettingStarted() {
         <div className="row">
           <div className="col-12">
             <div className="card text-center">
-              <div className="card-header">
-                <h1>Give a Gift That Never Gets Old!</h1>
-              </div>
               <div className="card-body">
                 <br></br>
                 <h2>
-                  To Have Your Story Told Like The One Above, Simply Fill Out an
-                  Application and be Matched with One of Our Many Story Tellers
+                  To Get Started on Having Your Story Told, Simply Fill Out the
+                  Form Below
                 </h2>
                 <br></br>
                 <br></br>
