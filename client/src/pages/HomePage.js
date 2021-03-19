@@ -89,9 +89,9 @@ function Home() {
                 <h3 className="text-center video-header">
                   A Sample of What Your Story Could Look Like
                 </h3>
-                <video height="500px" controls>
+                <video className="who-vid" height="500px" controls>
                   <source
-                    src={`${process.env.PUBLIC_URL}/images/the_who.mp4`}
+                    src={`${process.env.PUBLIC_URL}/images/the_who_compressed.mp4`}
                     type="video/mp4"
                   />
                 </video>
