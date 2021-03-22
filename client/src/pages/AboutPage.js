@@ -45,7 +45,8 @@ function About() {
               <div className="col-4">
                 <img
                   alt="Head shot of Brendan"
-                  src={`${process.env.PUBLIC_URL}/images/mediaicon.png`}
+                  style={{ height: "250px", width: "180px" }}
+                  src={`${process.env.PUBLIC_URL}/images/brendan.jpg`}
                 ></img>
               </div>
               <div className="col-4">
@@ -92,6 +93,17 @@ function About() {
             <div className="col-2"></div>
             <div className="col-4">
               <h3>Sean Meagher - Animation</h3>
+              <p className="text-right">
+                Sean Meagher first found his love of stop motion during family
+                gatherings around Christmas and Thanksgiving. Bored out of his
+                mind, he would steal away with his mother’s camera to make short
+                films about evil coolers or coffee creamers falling in love. And
+                it’s safe to say his taste for weird, dumb shorts where
+                inanimate objects come to life hasn’t changed much all these
+                years later. Since graduating from Middlebury College, he has
+                been living it up in Miami making short films and advertisements
+                and partaking in the occasional film festival
+              </p>
             </div>
             <div className="col-4">
               <img
