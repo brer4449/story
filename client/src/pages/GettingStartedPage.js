@@ -173,17 +173,17 @@ function GettingStarted() {
     }
     setServerState({ submitting: true });
     // ***************COMMENTED THIS OUT SO IT DOESN'T SEND AN EMAIL EACH TIME WE SUBMIT A FORM******************
-    // axios({
-    //   method: "POST",
-    //   url: `https://formspree.io/f/xyyjvbzz`,
-    //   data: inputs,
-    // })
-    //   .then((r) => {
-    //     console.log(r);
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
+    axios({
+      method: "POST",
+      url: `https://formspree.io/f/xyyjvbzz`,
+      data: inputs,
+    })
+      .then((r) => {
+        console.log(r);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     // TODO: update this so it handles checkbox input, not text input
     // if (inputs) {
     //   API.saveClientFormData({
